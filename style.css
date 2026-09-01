@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+header {
+  text-align: center;
+  padding: 35px 20px 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #64748b;
+}
+
+main {
+  width: min(1000px, 92%);
+  margin: auto;
+}
+
+.controls {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: end;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+select, input, button {
+  font: inherit;
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+input[type="range"] {
+  width: 150px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#reset {
+  background: #475569;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  margin: 18px 0;
+}
+
+.stats div {
+  background: white;
+  flex: 1;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.06);
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.stats span {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.bars {
+  height: 390px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px 12px 12px;
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+}
+
+.bar {
+  flex: 1;
+  min-width: 4px;
+  border-radius: 5px 5px 0 0;
+  transition: height 0.15s ease, transform 0.15s ease;
+}
+
+.bar.active {
+  transform: translateY(-5px);
+}
+
+.info {
+  margin: 18px 0 35px;
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+}
+
+.info h2 {
+  margin-bottom: 8px;
+}
+
+.info p {
+  margin-top: 8px;
+  color: #475569;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+}
+
+@media (max-width: 650px) {
+  .controls, .stats {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stats div {
+    width: 100%;
+  }
+
+  .bars {
+    height: 300px;
+  }
+}

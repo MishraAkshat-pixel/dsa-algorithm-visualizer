@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>DSA Algorithm Visualizer</h1>
+    <p>Visualize sorting algorithms step by step.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label>
+        Algorithm
+        <select id="algorithm">
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="insertion">Insertion Sort</option>
+        </select>
+      </label>
+
+      <label>
+        Array Size
+        <input id="size" type="range" min="5" max="40" value="20">
+        <span id="sizeValue">20</span>
+      </label>
+
+      <button id="generate">Generate Array</button>
+      <button id="sort">Visualize Sort</button>
+      <button id="reset">Reset</button>
+    </section>
+
+    <section class="stats">
+      <div><strong id="comparisons">0</strong><span>Comparisons</span></div>
+      <div><strong id="swaps">0</strong><span>Swaps</span></div>
+      <div><strong id="status">Ready</strong><span>Status</span></div>
+    </section>
+
+    <section id="bars" class="bars" aria-label="Array visualization"></section>
+
+    <section class="info">
+      <h2 id="algorithmTitle">Bubble Sort</h2>
+      <p id="description">
+        Repeatedly compares adjacent elements and swaps them when they are in the wrong order.
+      </p>
+      <p><strong>Time Complexity:</strong> <span id="complexity">O(n²)</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with HTML, CSS & JavaScript • DSA Practice Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
