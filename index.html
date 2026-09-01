@@ -7,54 +7,107 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>DSA Algorithm Visualizer</h1>
-    <p>Visualize sorting algorithms step by step.</p>
-  </header>
+<header class="hero">
+  <div>
+    <p class="eyebrow">DSA LEARNING TOOL</p>
+    <h1>Algorithm Visualizer</h1>
+    <p>Build your own array and watch every comparison, swap, and step happen in real time.</p>
+  </div>
+</header>
 
-  <main>
-    <section class="controls">
-      <label>
-        Algorithm
-        <select id="algorithm">
-          <option value="bubble">Bubble Sort</option>
-          <option value="selection">Selection Sort</option>
-          <option value="insertion">Insertion Sort</option>
-        </select>
-      </label>
+<main>
+  <section class="panel controls">
+    <div class="control-group wide">
+      <label for="arrayInput">Your own array</label>
+      <div class="input-row">
+        <input id="arrayInput" type="text" placeholder="Example: 42, 7, 19, 3, 25, 11">
+        <button id="applyArray">Use Array</button>
+      </div>
+      <small>Enter 2–40 integers separated by commas or spaces.</small>
+    </div>
 
-      <label>
-        Array Size
-        <input id="size" type="range" min="5" max="40" value="20">
-        <span id="sizeValue">20</span>
-      </label>
+    <div class="control-group">
+      <label for="algorithm">Algorithm</label>
+      <select id="algorithm">
+        <option value="bubble">Bubble Sort</option>
+        <option value="selection">Selection Sort</option>
+        <option value="insertion">Insertion Sort</option>
+        <option value="merge">Merge Sort</option>
+      </select>
+    </div>
 
-      <button id="generate">Generate Array</button>
-      <button id="sort">Visualize Sort</button>
-      <button id="reset">Reset</button>
+    <div class="control-group">
+      <label for="speed">Speed <span id="speedLabel">Normal</span></label>
+      <input id="speed" type="range" min="1" max="5" value="3">
+    </div>
+
+    <div class="button-row">
+      <button id="randomArray" class="secondary">Random Array</button>
+      <button id="start">▶ Start</button>
+      <button id="pause" class="warning" disabled>Ⅱ Pause</button>
+      <button id="reset" class="dark">↻ Reset</button>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><span>Comparisons</span><strong id="comparisons">0</strong></div>
+    <div class="stat"><span>Swaps / Moves</span><strong id="swaps">0</strong></div>
+    <div class="stat"><span>Steps</span><strong id="steps">0</strong></div>
+    <div class="stat"><span>Status</span><strong id="status">Ready</strong></div>
+  </section>
+
+  <section class="panel visual-panel">
+    <div class="visual-head">
+      <div>
+        <h2 id="visualTitle">Bubble Sort</h2>
+        <p id="message">Enter your own array or generate a random one, then press Start.</p>
+      </div>
+      <div class="legend">
+        <span><i class="dot compare"></i> Comparing</span>
+        <span><i class="dot swap"></i> Swapping</span>
+        <span><i class="dot sorted"></i> Sorted</span>
+      </div>
+    </div>
+    <div id="bars" class="bars"></div>
+  </section>
+
+  <section class="two-col">
+    <section class="panel">
+      <div class="panel-title">
+        <h2>What's happening?</h2>
+        <span id="stepBadge">Step 0</span>
+      </div>
+      <div id="explanation" class="explanation">
+        Choose an algorithm and start the visualization.
+      </div>
+      <div class="array-readout">
+        <strong>Current array:</strong>
+        <code id="arrayReadout"></code>
+      </div>
     </section>
 
-    <section class="stats">
-      <div><strong id="comparisons">0</strong><span>Comparisons</span></div>
-      <div><strong id="swaps">0</strong><span>Swaps</span></div>
-      <div><strong id="status">Ready</strong><span>Status</span></div>
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Algorithm Details</h2>
+      </div>
+      <p id="algorithmDescription"></p>
+      <div class="complexities">
+        <div><span>Time</span><strong id="timeComplexity"></strong></div>
+        <div><span>Space</span><strong id="spaceComplexity"></strong></div>
+      </div>
     </section>
+  </section>
 
-    <section id="bars" class="bars" aria-label="Array visualization"></section>
+  <section class="panel pseudocode-panel">
+    <div class="panel-title">
+      <h2>Pseudocode</h2>
+      <span id="codeLine">Ready</span>
+    </div>
+    <pre id="pseudocode"></pre>
+  </section>
+</main>
 
-    <section class="info">
-      <h2 id="algorithmTitle">Bubble Sort</h2>
-      <p id="description">
-        Repeatedly compares adjacent elements and swaps them when they are in the wrong order.
-      </p>
-      <p><strong>Time Complexity:</strong> <span id="complexity">O(n²)</span></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Built with HTML, CSS & JavaScript • DSA Practice Project</p>
-  </footer>
-
-  <script src="script.js"></script>
+<footer>DSA Algorithm Visualizer • Built with HTML, CSS & JavaScript</footer>
+<script src="script.js"></script>
 </body>
 </html>

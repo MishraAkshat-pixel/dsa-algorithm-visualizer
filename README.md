@@ -1,40 +1,26 @@
 # DSA Algorithm Visualizer
 
-A beginner-friendly web project that visualizes common sorting algorithms step by step.
+An interactive browser-based tool for learning sorting algorithms by watching each comparison, swap, move, and step.
 
 ## Features
-
+- Enter and visualize your own array of 2–40 integers
 - Generate random arrays
-- Visualize Bubble Sort
-- Visualize Selection Sort
-- Visualize Insertion Sort
-- Track comparisons and swaps
-- Responsive interface
-- Shows algorithm descriptions and time complexity
+- Bubble Sort, Selection Sort, Insertion Sort, and Merge Sort
+- Live comparisons and swaps/moves
+- Step counter and current action explanation
+- Pause / Resume / Reset
+- Adjustable animation speed
+- Pseudocode and time/space complexity
+- Responsive UI
 
 ## Tech Stack
+HTML5, CSS3, JavaScript, Data Structures & Algorithms
 
-- HTML5
-- CSS3
-- JavaScript
-- DSA / Sorting Algorithms
+## Run locally
+Open `index.html` in a browser.
 
-## How to Run
-
-1. Download or clone the repository.
-2. Open `index.html` in a browser.
-3. Select an algorithm.
-4. Generate an array.
-5. Click **Visualize Sort**.
-
-## Future Improvements
-
-- Add Merge Sort and Quick Sort
-- Add animation speed control
-- Display pseudocode
-- Add array input from the user
-- Add dark mode
+## GitHub Pages
+Upload the four project files to a public repository and enable GitHub Pages from the `main` branch and `/root`.
 
 ## Author
-
 Akshat Mishra
